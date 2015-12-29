@@ -1,12 +1,9 @@
 # Fix SKCamera
 
-What the fsck is wrong with SKCamera node?
+What is wrong with SKCameraNode?
 
-In cases where the SKScene doesn't fit exactly into the SKView, due to cropping
-as happens every time you use .AspectFill, the camera node doesn't work.
+In cases where the SKScene aspect ratio doesn't match that of the device when
+you use .AspectFill, the camera node doesn't work.
 
 Instead of being in the middle you have to move it left by the amount of the
-scene that is clipped.  This is very annoying, counter-intuitive and basically
-fscked up beyond the telling of it.
-
-Unless I'm missing something.  Which is possible.
+scene that is clipped.
