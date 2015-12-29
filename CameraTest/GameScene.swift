@@ -12,27 +12,16 @@ class GameScene: SKScene {
     
     override func didMoveToView(view: SKView)
     {
+        print("view: \(view.frame)")
+        
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!"
         myLabel.fontSize = 45
-        myLabel.position = midpoint
+        myLabel.position = CGPoint(x: size.width / 2.0, y: size.height / 2.0)
         myLabel.name = "Label"
         
         self.addChild(myLabel)
     }
        
-    override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
-    }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let label = childNodeWithName("Label") as! SKLabelNode
-        label.fontColor = SKColor.redColor()
-        label.text = "Fixing camera now!"
-
-        let correctCameraPos = CGPoint(x: midpoint.x - displayedRect.origin.x, y: midpoint.y)
-        camera?.runAction(SKAction.moveTo(correctCameraPos, duration: 0.8))
-        
-    }
 }
